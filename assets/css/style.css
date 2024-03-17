@@ -730,29 +730,23 @@ main {
 
 .clients-list {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  gap: 15px;
-  margin: 0 -15px;
-  padding: 25px;
-  padding-bottom: 25px;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  overscroll-behavior-inline: contain;
-  scroll-snap-type: inline mandatory;
-  scroll-padding-inline: 25px;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .clients-item {
-  min-width: 50%;
-  scroll-snap-align: start;
+  flex: 0 0 16.66%; /* do not grow or shrink, base width */
+  max-width: 16.66%; /* Limiting the maximum width */
+  box-sizing: border-box; /* Include padding and border in the element's total width */
 }
 
 .clients-item img {
-  width: 100%;
-  filter: grayscale(1);
-  transition: var(--transition-1);
+  width: 100%; /* Make the image fill the container */
+  height: auto; /* Maintain aspect ratio */
 }
+
 
 .clients-item img:hover { filter: grayscale(0); }
 
